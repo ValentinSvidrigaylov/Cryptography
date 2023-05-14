@@ -5,7 +5,7 @@ import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
 import { provideRouter } from '@angular/router';
-import routeConfig from './app/routes';
+import { routing, routes } from './app/app.routes';
 
 import { AppComponent } from './app/app.component';
 
@@ -22,7 +22,21 @@ bootstrapApplication(AppComponent,
   {
     providers: [
       provideProtractorTestingSupport(),
-      provideRouter(routeConfig)
+      provideRouter(routes)
     ]
   }
 ).catch(err => console.error(err));
+
+/*import { AppComponent } from './app/app.component';
+import { provideRouter } from '@angular/router';
+import routeConfig from './app/app.routes';
+import { bootstrapApplication, provideProtractorTestingSupport } from '@angular/platform-browser';
+
+bootstrapApplication(AppComponent,
+  {
+    providers: [
+      provideProtractorTestingSupport(),
+      provideRouter(routeConfig)
+    ]
+  }
+).catch(err => console.error(err));*/

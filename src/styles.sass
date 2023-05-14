@@ -1,1 +1,353 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'variables.sass'
+
+@font-face 
+    font-family: 'Poppins', sans-serif
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;900')
+
+html
+    font-size: 1em
+
+html[data-theme='light']
+    --button-background-color: white
+    --button-color: black
+    --bs-body-bg: #E9ECEF
+    --outer-background-color: #343A40
+    --color: black
+    --bs-body-color: black !important
+    --a-color: black
+    --bs-nav-link-color: white
+    --side-color: #F8F9FA 
+
+
+html[data-theme='dark']  
+    --button-background-color: black
+    --button-color: white
+    --bs-body-bg: #343A40
+    --outer-background-color: #E9ECEF
+    --color: white !important
+    --bs-body-color: white !important
+    --bs-nav-link-color: black
+    --a-color: white
+    --side-color: #495057
+
+    input
+        background: #252a2e
+
+a 
+    color: var(--a-color)
+
+a:hover 
+    filter: invert(1)
+    text-decoration: underline !important
+
+body
+    margin: 0
+    padding: 0
+    height: 100%
+    min-height: 100vh
+    background-color: var(--outer-background-color)
+    font-family: 'Inter', sans-serif
+    font-weight: 400
+    font-size: 1em
+
+@each $percent in $percents
+  .split-#{$percent}-#{100-$percent}  
+        display: grid
+        grid-template-columns: #{$percent}fr #{100-$percent}fr
+
+main 
+    padding: 0.5rem
+    width: 80vmax
+    margin-left: auto
+    margin-right: auto
+    background: var(--background-color)
+    box-sizing: border-box
+
+
+nav, header, footer 
+    background: var(--outer-background-color)
+    margin: 0px !important
+    color: var(--side-color)
+
+div#theme-button-cover 
+    width: 10vw
+    transition: 0.4s ease
+    float: left
+    margin: 0.4rem
+
+div#theme-button-cover button#theme-toggle 
+    background: var(--button-background-color)
+    color: var(--button-color)
+    border-radius: 1rem
+
+div#theme-button-cover button#theme-toggle 
+    transition: 0.4s ease
+
+
+@media (pointer: fine) and (min-width: 1000px) 
+    html[data-theme='dark'] div#theme-button-cover button#theme-toggle 
+        transform: translateX(4vw)
+	
+.border-20 
+  border-radius: 20px
+
+.deco-none 
+  text-decoration: none
+
+.border-gray 
+  border: 3px solid gray
+
+.border-black
+  border: 3px solid black
+
+a.active
+    text-decoration: underline
+
+.scale 
+  transition: 1s
+
+
+.scale:hover 
+  transform: scale(1.1)
+
+.nav-link
+    transition: none !important
+
+#info
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: middle
+
+#info > a
+    display: flex
+    align-items: center    
+
+
+/**
+ ** Mobile Navigation
+
+.mobile-nav-toggle
+  color: #fff
+  
+  cursor: pointer
+  display: none
+  line-height: 0
+  transition: 0.5s
+
+@media (max-width: 991px)
+  .mobile-nav-toggle
+    display: block
+
+  .navbar ul
+    display: none
+
+.navbar-mobile
+  position: fixed
+  overflow: hidden
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  background: rgba(17, 38, 48, 0.9)
+  transition: 0.3s
+
+  .mobile-nav-toggle
+    position: absolute
+    top: 15px
+    right: 15px
+
+  ul
+    display: block
+    position: absolute
+    top: 55px
+    right: 15px
+    bottom: 15px
+    left: 15px
+    padding: 10px 0
+    background-color: #fff
+    overflow-y: auto
+    transition: 0.3s
+
+  a
+    padding: 10px 20px
+    color: #1e4356
+
+    &:hover
+      color: #68A4C4
+
+  .active, li:hover > a
+    color: #68A4C4
+
+  .getstarted
+    margin: 15px
+
+  .dropdown
+    ul
+      position: static
+      display: none
+      margin: 10px 20px
+      padding: 10px 0
+      z-index: 99
+      opacity: 1
+      visibility: visible
+      background: #fff
+      box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25)
+
+      li
+        min-width: 200px
+
+      a
+        padding: 10px 20px
+
+        &:hover
+          color: #68A4C4
+
+      .active:hover, li:hover > a
+        color: #68A4C4
+
+    > .dropdown-active
+      display: block
+
+/* some stuff
+
+@media screen and (max-device-width: 800px)
+  #mobile-hidden
+    visibility: hidden
+    display: none
+
+  #mobile-visible
+    display: inline
+
+.hidden
+  visibility: hidden
+  display: none
+
+#submit
+  border-radius: 10px
+  background: #F9F9F9
+
+#wrapper img.zero
+  margin: 0
+  padding: 0
+
+.shown
+  display: inline-block
+
+.scale
+  transition: 1s
+
+  &:hover
+    transform: scale(1.1)
+
+.math
+  font-family: courier
+  font-weight: bold
+  background-color: #CCC
+
+html[data-theme='dark'] .math
+  background-color: #333
+
+.margin-25-top
+  margin-top: 25px
+
+.align-center
+  text-align: center
+
+.align-left
+  text-align: left
+
+.align-right
+  text-align: right
+
+.href
+  text-decoration: none
+  color: black
+
+div.margin-15
+  margin: 1
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  flex-direction: row
+  align-items: center
+
+.word-break
+  word-break: break-all
+
+.logo a
+  color: white
+  text-decoration: none
+
+  &:hover
+    color: #a2cce3
+    text-decoration: none
+
+a
+  &.white-h:hover
+    color: #E6E6FA
+
+  color: #1E90FF
+
+.block
+  display: block
+
+/*.border-gray {
+ *  border: 3px solid gray;
+ *}
+
+.frame
+  margin: auto
+
+#wrapper #main div.flex
+  display: flex
+  flex-direction: row
+  align-items: center
+  flex: 1 1 80%
+  justify-content: center
+  flex-wrap: wrap
+
+.icon
+  border-radius: 50%
+  width: 100px
+  height: 100px
+  margin: 10px
+
+.border-black
+  border: 2px solid black
+
+.margin-20
+  margin: 20px
+
+.padding-20
+  padding: 20px
+
+.border-20
+  border-radius: 20px
+
+.deco-none
+  text-decoration: none
+
+.clear
+  clear: both
+
+#hidden-text
+  width: 80%
+  height: 400px
+  overflow: auto
+
+.deco-none
+  text-decoration: none
+  list-style-type: none
+
+h1
+  font-family: "Times New Roman", Times, serif
+  text-align: center
+  text-transform: capitalize
+
+/* end some stuff */
+
+#back
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap

@@ -1,0 +1,38 @@
+.fixed_nav
+    position: fixed
+    display: inline-block
+    left: 50%
+    bottom: 1%
+    background: var(--outer-background-color)
+    color: var(--side-color)
+    border-radius: 0.5rem
+    border: .1em solid black
+    z-index: 2147483647
+    transform: translate(-50%, -50%)
+
+.fixed_nav > a
+    padding: 0 .8rem
+
+.fixed_nav > a:hover 
+    filter: invert(1)
+    text-decoration: underline !important
+
+div.vertical_line
+    height: .8em
+    display: inline-block
+    border-right: .1em solid black    
+
+.nav-link
+    display: inline-block
+
+.hide_fixed_nav
+    position: fixed
+    display: inline-block
+    left: 2.5%
+    bottom: 2.5%
+
+.hide_fixed_nav > button
+    background: var(--outer-background-color)
+    color: var(--side-color)
+    border-radius: 0.5rem
+    border: .1em solid black

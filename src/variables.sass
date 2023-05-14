@@ -1,0 +1,11 @@
+$primary: orangered
+$secondary: dodgerblue
+
+$start: 1
+$end: 100
+
+$percents: ""
+
+@for $i from $start + 1 through $end 
+  $percents: append($percents, $i, comma)
+  $percents: set-nth($percents, 1, $start)

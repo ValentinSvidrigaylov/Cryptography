@@ -1,10 +1,26 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule, Injectable } from '@angular/core';
+import { Title } from "@angular/platform-browser";
+import { TitleStrategy, RouterStateSnapshot, RouterModule, Routes } from "@angular/router";
+import { BrowserModule } from '@angular/platform-browser';
 
-const routes: Routes = [];
+@Injectable()
+export class TemplatePageTitleStrategy extends TitleStrategy {
+  constructor(private readonly title: Title) {
+    super();
+  }
+
+  override updateTitle(routerState: RouterStateSnapshot) {
+    const title = this.buildTitle(routerState);
+    if (title !== undefined) {
+      this.title.setTitle(`App | ${title}`);
+    }
+  }
+}
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ BrowserModule],
+  exports: [RouterModule],
+  providers: [{ provide: TitleStrategy, useClass: TemplatePageTitleStrategy }],
 })
+
 export class AppRoutingModule { }

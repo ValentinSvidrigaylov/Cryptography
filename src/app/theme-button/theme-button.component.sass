@@ -1,0 +1,26 @@
+div#theme-button-cover 
+    width: 10vw
+    transition: 0.4s ease
+    float: left
+    margin: 0.4rem
+
+div#theme-button-cover button#theme-toggle 
+    background: var(--button-background-color)
+    color: var(--button-color)
+    border-radius: 1rem
+
+div#theme-button-cover button#theme-toggle 
+    transition: 0.4s ease
+
+div#theme-button-cover button#theme-toggle::before
+    content: 'toggle theme'
+
+@media (max-width: 600px)
+    div#theme-button-cover button#theme-toggle::before
+        content: '☼'
+
+    
+
+/*@media (pointer: fine) and (min-width: 1000px) 
+    html[data-theme='dark'] div#theme-button-cover button#theme-toggle 
+        transform: translateX(4vw)*/

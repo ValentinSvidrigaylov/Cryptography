@@ -4,9 +4,9 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-popular-cyphers',
   template: `
 <article>
-  <section>          
-    <section>
-      <h2 align="center">Популярные шифры и методы шифрования</h2>
+  <section>  
+    <h2 align="center">Популярные шифры и методы шифрования</h2>        
+    <section>  
       <p class="my-3">В современном мире существует множество алгоритмов шифрования и хеш-функций. Ниже представлены одни из самых популярных.</p>
       <h3>Семейство алгоритмов хеширования SHA</h3>
       <p>Впервые SHA опубликовали в 1993 году, но вскоре после выявления недостатков алгоритма шифрования его заменил SHA-1. SHA-1 был разработан Агенством Национальной Безопасности США и первоначально использовался для цифровой подписи, но в 2010 году в нём тоже были найдены недостатки и настала эра SHA-2.</p>
@@ -27,9 +27,28 @@ import { Component, OnInit } from '@angular/core';
           <h5>Результат: </h5><span>{{ sha_384_output }}</span>
         </div>        
       </div>
+      <h3>MD5</h3>
+      <p>MD5 был разработан в 1991 году Рональдом Ривестом. Этот алгоритм также предназначался для создания «отпечатков» сообщения произвольной длины. В современное время практически вытеснен семейством SHA-2. Ключевым свидетельством начала заката эпохи MD5 свидетельствует его исключение из пула алгоритмов TLS 1.3 (хотя это вовсе не означает, что его перестанут использовать в ближайшие ~10-15 лет, так как, к примеру, львиная доля Интернета всё ещё работает на IPv4, несмотря на массовую популяризацию IPv6 и проблемы, связанные с устареванием IPv4).</p>
+      <div class="my-2">
+        <h4>Хеширование MD5</h4>
+        <label for="md5_field"><h5>Строка:&nbsp;</h5></label>
+        <input name="md5_field" type="text" (change)="MD5()" [(ngModel)]="md5_field"/>
+        <div>
+          <h5>Результат: </h5><span>{{ md5_output }}</span>
+        </div>        
+      </div>
+      <h3>Base 64</h3>
+      <p>Base 64 – это стандарт кодирования двоичных данных при помощи только 64 символов ASCII. Base64 был разработан Инженерным советом Интернета (англ. Internet Engineering Task Force, IETF). Впервые этот стандарт кодирования был описан в 1987 в RFC 989, а свое название получил в 1992. Часто именно Base 64 используется там, где нет возможности гарантировать бережного обращения с информацией (например, в протоколах прикладного уровня стека TCP/IP).</p>
+      <div class="my-2">
+        <h4>Хеширование Base64</h4>
+        <label for="base64_field"><h5>Строка:&nbsp;</h5></label>
+        <input name="base64_field" type="text" (change)="Base64()" [(ngModel)]="base64_field"/>
+        <div>
+          <h5>Результат: </h5><span>{{ base64_output }}</span>
+        </div>        
+      </div>
     </section>
     <section>  
-      
       <div id="back">
         <a href="popular_cyphers#percent"><img src="../assets/img/percent_icon.png" class="icon border-black" alt="Шифрование процентами" title="Шифрование процентами" ></a>&nbsp;
         <a href="popular_cyphers#vigener"><img src="../assets/img/Vigenere_icon.png" class="icon border-black" alt="Шифр Виженера" title="Шифр Виженера"></a>&nbsp;
@@ -148,7 +167,7 @@ import { Component, OnInit } from '@angular/core';
         <a id="skytale"></a>
         <h3>Скитала</h3>
         <p><img src="../assets/img/Skytale.png" width="30%" alt="Скитала" title="Скитала"  class="scale"></p>              
-          <pre style="margin-left: 100px;">| | | | | | | | | | | | | | | | | | |
+          <pre style="margin-left: 100px;">  | | | | | | | | | | | | | | | | | | |
   | |В| |и|г|р|е| |е|е| |к|о|н|н|ы|й| |
   | |н|е| |с|л|о|в|и|т|,| | | | | | | |
   | |В| |б|е|д|е| |—| |н|е| | | | | | |
@@ -157,8 +176,7 @@ import { Component, OnInit } from '@angular/core';
   | |о|с|т|а|н|о|в|и|т|,| | | | | | | |
   | |В| |г|о|р|я|щ|у|ю| |и|з|б|у| | | |
   | |в|о|й|д|е|т|!| | | | | | | | | | |
-  | | | | | | | | | | | | | | | | | | |
-                      </pre>
+  | | | | | | | | | | | | | | | | | | |</pre>
         <p class="left">Метод шифрования:</p>
         <div class="left">
           <i>
@@ -251,6 +269,12 @@ export class PopularCyphersComponent implements OnInit {
   sha_384_field: string = '';
   sha_384_output: string = '';
 
+  md5_field: string = '';
+  md5_output: string = '';
+
+  base64_field: string = '';
+  base64_output: string = '';
+
   percentResult: boolean = false;
 
   TryPercent() {
@@ -274,6 +298,16 @@ export class PopularCyphersComponent implements OnInit {
   SHA_384() {
     var toEncode = this.sha_384_field;    
     fetch('https://md5calc.com/hash/sha384.json/'+encodeURIComponent(toEncode), {method: 'GET'}).then((e)=>e.json()).then((e)=>{console.log(e);this.sha_384_output = e});
+  }
+
+  MD5() {
+    var toEncode = this.md5_field;    
+    fetch('https://md5calc.com/hash/md5.json/'+encodeURIComponent(toEncode), {method: 'GET'}).then((e)=>e.json()).then((e)=>{console.log(e);this.md5_output = e});
+  }
+
+  Base64() {
+    var toEncode = this.base64_field;    
+    fetch('https://md5calc.com/base64/enc.json/'+encodeURIComponent(toEncode), {method: 'GET'}).then((e)=>e.json()).then((e)=>{console.log(e);this.base64_output = e});
   }
 
   ngOnInit(): void {

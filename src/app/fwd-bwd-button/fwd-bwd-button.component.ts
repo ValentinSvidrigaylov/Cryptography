@@ -34,7 +34,7 @@ export class FwdBwdButtonComponent implements OnInit {
   //@Input() urls: string[];  
   
   HideButtons() {
-    Array.from(document.getElementsByClassName('fixed_nav') as HTMLCollectionOf<HTMLElement>).forEach((e)=>{e.style.display = e.style.display == 'block' ? 'none' : 'block'})    
+    Array.from(document.getElementsByClassName('fixed_nav') as HTMLCollectionOf<HTMLElement>).forEach((e)=>{e.style.display = e.style.display == 'none' ? 'block' : 'none'})    
   }
 
   constructor(private router: Router, @Inject(DOCUMENT) private _document: any) {

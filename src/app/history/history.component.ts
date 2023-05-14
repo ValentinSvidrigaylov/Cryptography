@@ -19,7 +19,7 @@ import { Component, OnInit } from '@angular/core';
       </section>
       <section class="split-40-60 m-2">
         <div>
-          <a href="../assets/img/Vigenere.jpg"><img src="../assets/img/Vigenere.jpg"  title="Шифр Виженера" align="left" class="scale"></a>
+          <a href="../assets/img/Vigenere.jpg"><img src="../assets/img/Vigenere.jpg"  title="Шифр Виженера" align="left" class="scale" width="100%"></a>
         </div>
         <div class="m-2">
           <p>Разберём на примере шифра Виженера: </p>

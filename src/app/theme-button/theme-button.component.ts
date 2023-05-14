@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div id="theme-button-cover">
-      <button class="theme-toggle" id="theme-toggle" title="Сменить тему" aria-label="light" aria-live="polite">toggle theme</button>
+      <button class="theme-toggle" id="theme-toggle" title="Сменить тему" aria-label="light" aria-live="polite"></button>
     </div>
     <script src="../../js/theme-button.js"></script>
   `,

@@ -13,11 +13,15 @@ import { RouterModule, RouterLink } from '@angular/router';
       <button (click)="HideButtons()">Скрыть/Показать</button>
     </div>
     <div class="fixed_nav">
-      <a [routerLink]="url_back" class="nav-link">Назад</a>
-      <div class="vertical_line"></div>
+      <ng-template [ngIf]="showBack">
+        <a [routerLink]="url_back" class="nav-link">Назад</a>
+        <div class="vertical_line"></div>
+      </ng-template>
       <a [routerLink]="url_home" class="nav-link">Оглавление</a>
-      <div class="vertical_line"></div>
-      <a [routerLink]="url_forth" class="nav-link">Вперёд</a>
+      <ng-template [ngIf]="showForth">
+        <div class="vertical_line"></div>
+        <a [routerLink]="url_forth" class="nav-link">Вперёд</a>
+      </ng-template>
     </div>
   </div>`,
   styleUrls: ['./fwd-bwd-button.component.sass']
@@ -30,36 +34,44 @@ export class FwdBwdButtonComponent implements OnInit {
   url_back: string;
   url_forth: string;
   urls: string[];
-  //@Input() asd: string;
+  reduced: boolean;
+
+  tTrue: boolean = true;
+
+  showBack: boolean = true;
+  showForth: boolean = true;
+  //@Input() reduced: boolean;
   //@Input() urls: string[];  
   
   HideButtons() {
     Array.from(document.getElementsByClassName('fixed_nav') as HTMLCollectionOf<HTMLElement>).forEach((e)=>{e.style.display = e.style.display == 'none' ? 'block' : 'none'})    
   }
 
-  constructor(private router: Router, @Inject(DOCUMENT) private _document: any) {
-    this.window = this._document.defaultView
-    console.log(this.window.pageYOffset)
-    window.addEventListener('scroll', function() {
- 
-      if (this.window.pageYOffset >= 250) {
-          
-          // do something when scrolling down
+  CheckIndexes() {
+    if (this.reduced) {
+      if (this.url_back == this.urls[this.urls.length-1]) {
+        this.showBack = false;
+      } else {
+        this.showBack = true;
       }
-  
-      if (this.window.pageYOffset < 250) {
 
-          // do something when scrolling up, and enable the scroll-down event to fire once again
+      if (this.url_forth == this.urls[0]) {
+        this.showForth = false;
+      } else {
+        this.showForth = true;
       }
-    });
+    }
+  }
 
-
+  constructor(private router: Router) {
+    this.reduced = true;
     this.urls = ['/home','/history','/main_problems','/popular_cyphers','/sources','/about'];
     console.log(this.urls);
-    this.currentRoute = "";
+    this.currentRoute = location.pathname.match(/[\w/]*\/(\w*)/i)![1] || '';
     this.url_home = this.urls[0];
     this.url_back = this.urls[this.urls.indexOf(location.pathname)-1 > 0 ? this.urls.indexOf(location.pathname)-1 : -1];
     this.url_forth = this.urls[this.urls.indexOf(location.pathname)+1 < this.urls.length ? this.urls.indexOf(location.pathname)+1 : 0];
+    this.CheckIndexes();
     this.router.events.subscribe((event: Event) => {
         if (event instanceof NavigationStart) {
             // Show progress spinner or progress bar
@@ -70,8 +82,10 @@ export class FwdBwdButtonComponent implements OnInit {
             // Hide progress spinner or progress bar
             this.currentRoute = event.url;          
             console.log(event);
-            this.url_back = this.urls[this.urls.indexOf(location.pathname) > 0 ? this.urls.indexOf(location.pathname)-1 : this.urls.length-1];
-            this.url_forth = this.urls[this.urls.indexOf(location.pathname)+1 < this.urls.length ? this.urls.indexOf(location.pathname)+1 : 0];
+            this.url_back = this.urls[this.urls.indexOf(this.currentRoute) > 0 ? this.urls.indexOf(this.currentRoute)-1 : this.urls.length-1];
+            this.url_forth = this.urls[this.urls.indexOf(this.currentRoute)+1 < this.urls.length ? this.urls.indexOf(this.currentRoute)+1 : 0];
+
+            this.CheckIndexes();
         }
 
         if (event instanceof NavigationError) {

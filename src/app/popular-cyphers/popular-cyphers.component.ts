@@ -50,16 +50,16 @@ import { Component, OnInit } from '@angular/core';
     </section>
     <section>  
       <div id="back">
-        <a href="popular_cyphers#percent"><img src="../assets/img/percent_icon.png" class="icon border-black" alt="Шифрование процентами" title="Шифрование процентами" ></a>&nbsp;
-        <a href="popular_cyphers#vigener"><img src="../assets/img/Vigenere_icon.png" class="icon border-black" alt="Шифр Виженера" title="Шифр Виженера"></a>&nbsp;
-        <a href="popular_cyphers#transpozition"><img src="../assets/img/transpozition_icon.png" class="icon border-black" alt="Транспозиция" title="Транспозиция"></a>&nbsp;
-        <a href="popular_cyphers#skytale"><img src="../assets/img/Skytale_icon.png" class="icon border-black" alt="Скитала" title="Скитала"></a>&nbsp;
-        <a href="popular_cyphers#atbash"><img src="../assets/img/atbash_icon.png" class="icon border-black" alt="Шифр атбаш" title="Шифр атбаш"></a>&nbsp;
-        <a href="popular_cyphers#cesar"><img src="../assets/img/cesar_icon.jpg" class="icon border-black" alt="Шифр Цезаря" title="Шифр Цезаря"></a>&nbsp;
-        <a href="popular_cyphers#morze"><img src="../assets/img/morze_icon.jpg" class="icon border-black" alt="Азбука Морзе" title="Азбука Морзе"></a>&nbsp;
-        <a href="popular_cyphers#polibiy"><img src="../assets/img/square.png" class="icon border-black" alt="Квадрат Полибия" title="Квадрат Полибия"></a>&nbsp;
-        <a href="popular_cyphers#book"><img src="../assets/img/book.png" class="icon border-black" alt="Шифровальная книга" title="Шифровальная книга"></a>&nbsp;
-        <a href="popular_cyphers#disk"><img src="../assets/img/disk_icon.png" class="icon border-black" alt="Диск Энея" title="Диск Энея"></a>&nbsp;
+        <a href="popular_cyphers#percent"><img src="assets/img/percent_icon.png" class="icon border-black" alt="Шифрование процентами" title="Шифрование процентами" ></a>&nbsp;
+        <a href="popular_cyphers#vigener"><img src="assets/img/Vigenere_icon.png" class="icon border-black" alt="Шифр Виженера" title="Шифр Виженера"></a>&nbsp;
+        <a href="popular_cyphers#transpozition"><img src="assets/img/transpozition_icon.png" class="icon border-black" alt="Транспозиция" title="Транспозиция"></a>&nbsp;
+        <a href="popular_cyphers#skytale"><img src="assets/img/Skytale_icon.png" class="icon border-black" alt="Скитала" title="Скитала"></a>&nbsp;
+        <a href="popular_cyphers#atbash"><img src="assets/img/atbash_icon.png" class="icon border-black" alt="Шифр атбаш" title="Шифр атбаш"></a>&nbsp;
+        <a href="popular_cyphers#cesar"><img src="assets/img/cesar_icon.jpg" class="icon border-black" alt="Шифр Цезаря" title="Шифр Цезаря"></a>&nbsp;
+        <a href="popular_cyphers#morze"><img src="assets/img/morze_icon.jpg" class="icon border-black" alt="Азбука Морзе" title="Азбука Морзе"></a>&nbsp;
+        <a href="popular_cyphers#polibiy"><img src="assets/img/square.png" class="icon border-black" alt="Квадрат Полибия" title="Квадрат Полибия"></a>&nbsp;
+        <a href="popular_cyphers#book"><img src="assets/img/book.png" class="icon border-black" alt="Шифровальная книга" title="Шифровальная книга"></a>&nbsp;
+        <a href="popular_cyphers#disk"><img src="assets/img/disk_icon.png" class="icon border-black" alt="Диск Энея" title="Диск Энея"></a>&nbsp;
       </div>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
       <div align="center">
@@ -112,7 +112,7 @@ import { Component, OnInit } from '@angular/core';
           </div>
         </div>
         <p align="left"><i>В результате  получил таблицу соответствия "Символ - Процент".</i> </p>
-        <img src="../assets/img/percent.png" width="80%" class="border-black scale" alt="Шифр процентов" title="Шифр процентов"><br>
+        <img src="assets/img/percent.png" width="80%" class="border-black scale" alt="Шифр процентов" title="Шифр процентов"><br>
         <p align="left">Зашифрованный текст:</p>
         <p align="left"><i>В соответствии с этим кодом я зашифровал текст в виде чисел.</i></p>
         <p align="left"><i> Буду рад, если вы сумеете прочитать зашифрованный ниже текст и проверить результат.</i></p>
@@ -121,14 +121,14 @@ import { Component, OnInit } from '@angular/core';
         </p>
         <p>Формат: Пробел после слова, точки или запятой. Большая буква после точки.</p>      
         <button id="submit" class="border-black" type="submit" (click)="TryPercent()">Ответ</button>
-        <div id="hidden1" *ngIf="percentResult">Ты молодец!&nbsp;<img src="../assets/img/smile.png" width="60"></div>
+        <div id="hidden1" *ngIf="percentResult">Ты молодец!&nbsp;<img src="assets/img/smile.png" width="60"></div>
         <p align="left"><em>Таким образом, зная исходный текст и метод кодирования, положенный в основу, можно читать или отправлять любые сообщения понятные только посвященным людям.</em></p>
       </div>
       <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->        
       <div align="center">
         <a name="vigener"></a>
         <h3>Шифр Виженера</h3>  
-        <p> <img src="../assets/img/Vigenere.jpg" class="border-black scale" alt="Шифр Виженера" title="Шифр Виженера" width="50%"></p>
+        <p> <img src="assets/img/Vigenere.jpg" class="border-black scale" alt="Шифр Виженера" title="Шифр Виженера" width="50%"></p>
         <p align="left">  Метод шифрования:</p>
         <p align="left"><em>Шифруемое слово шифруется с помощью ключевого слова (подробное описание см. <a routerLink="/history">историю шифров</a>).</em></p>
       </div>
@@ -166,7 +166,7 @@ import { Component, OnInit } from '@angular/core';
       <div align="center">
         <a id="skytale"></a>
         <h3>Скитала</h3>
-        <p><img src="../assets/img/Skytale.png" width="30%" alt="Скитала" title="Скитала"  class="scale"></p>              
+        <p><img src="assets/img/Skytale.png" width="30%" alt="Скитала" title="Скитала"  class="scale"></p>              
           <pre style="margin-left: 100px;">  | | | | | | | | | | | | | | | | | | |
   | |В| |и|г|р|е| |е|е| |к|о|н|н|ы|й| |
   | |н|е| |с|л|о|в|и|т|,| | | | | | | |
@@ -194,7 +194,7 @@ import { Component, OnInit } from '@angular/core';
       <div align="center">
         <a id="atbash"></a>
         <h3>Атбаш</h3>
-        <p><img src="../assets/img/atbash.png" width="80%" class="border-black scale" alt="Шифр атбаш" title="Шифр атбаш"></p>
+        <p><img src="assets/img/atbash.png" width="80%" class="border-black scale" alt="Шифр атбаш" title="Шифр атбаш"></p>
         <p class="left">
           Метод шифрования:<br>
           <i>Алфавит начинается с конца.</i>
@@ -206,7 +206,7 @@ import { Component, OnInit } from '@angular/core';
               <a id="cesar"></a>
               <h3>Шифр Цезаря</h3><br>
               <p>(В примере использовался ROT3)</p>
-                <img src="../assets/img/cesar.png" width="80%" class="border-black scale" alt="Шифр Цезаря" title="Шифр Цезаря">
+                <img src="assets/img/cesar.png" width="80%" class="border-black scale" alt="Шифр Цезаря" title="Шифр Цезаря">
               <p>&nbsp;</p><br>
               <p class="left">
               Метод шифрования:<br>  
@@ -218,7 +218,7 @@ import { Component, OnInit } from '@angular/core';
       <div align="center">
         <a id="morze"></a>
         <h2>Азбука Морзе</h2>
-        <img src="../assets/img/morze.jpg" alt="Азбука Морзе" title="Азбука Морзе" width="50%" class="border-black scale"><br>
+        <img src="assets/img/morze.jpg" alt="Азбука Морзе" title="Азбука Морзе" width="50%" class="border-black scale"><br>
         <p class="left">
           Метод шифрования:<br>
           <i>Буквы шифруются с помощью точек и тире.</i>
@@ -228,7 +228,7 @@ import { Component, OnInit } from '@angular/core';
       <div align="center">
         <a id="polibiy"></a>
         <h3>Квадрат Полибия</h3>
-        <p><img src="../assets/img/polibiy.png" alt="Квадрат Полибия" title="Квадрат Полибия" width="40%" class="border-black scale"></p>
+        <p><img src="assets/img/polibiy.png" alt="Квадрат Полибия" title="Квадрат Полибия" width="40%" class="border-black scale"></p>
         <p class="left">
           Метод шифрования:<br>
           <i>Буква соответствует верхнему и нижнему числу.</i>
@@ -238,7 +238,7 @@ import { Component, OnInit } from '@angular/core';
       <div align="center">
         <a id="book"></a>
         <h3>Шифровальная книга</h3>
-        <p><img src="../assets/img/book.png" class="scale" width="20%"></p>
+        <p><img src="assets/img/book.png" class="scale" width="20%"></p>
         <p class="left">
           Метод шифрования:<br>
           <i>В книге записываются слова и их зашифрованные значения.<br>
@@ -249,7 +249,7 @@ import { Component, OnInit } from '@angular/core';
       <div align="center">
         <a id="disk"></a>
         <h3>Диск Энея</h3>
-        <p><img src="../assets/img/disk.png" alt="Диск Энея" title="Диск Энея" width="20%" class="scale"></p>
+        <p><img src="assets/img/disk.png" alt="Диск Энея" title="Диск Энея" width="20%" class="scale"></p>
         <p class="left">
           Метод шифрования:<br>
           <i>Поочерёдное протягивание свободного конца нити через отверстия, которые обозначают нужную букву шифруемого слова.</i>

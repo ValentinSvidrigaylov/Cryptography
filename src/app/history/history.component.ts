@@ -15,11 +15,11 @@ import { Component, OnInit } from '@angular/core';
           <p> Но время идёт вперед, технологии развиваются и криптография не исключение. В 15 веке в Европе и уже в 19 веке на Ближнем Востоке начали использовать более сложный полиалфавитный шифр.
             А суть этого шифра заключается в цикличном приминении нескольких простых (моноалфавитных) шрифтов.
         </div>
-        <img src="../assets/img/stick.jpg" width="100%" class="border-black border-20 scale" align="right">
+        <img src="assets/img/stick.jpg" width="100%" class="border-black border-20 scale" align="right">
       </section>
       <section class="split-40-60 m-2">
         <div>
-          <a href="../assets/img/Vigenere.jpg"><img src="../assets/img/Vigenere.jpg"  title="Шифр Виженера" align="left" class="scale" width="100%"></a>
+          <a href="assets/img/Vigenere.jpg"><img src="assets/img/Vigenere.jpg"  title="Шифр Виженера" align="left" class="scale" width="100%"></a>
         </div>
         <div class="m-2">
           <p>Разберём на примере шифра Виженера: </p>
@@ -52,7 +52,7 @@ import { Component, OnInit } from '@angular/core';
               В настоящее время криптография никуда не исчезла, просто она приобрела менее прикладной вид. Криптография давно стала неотъемлемой частью нашей с вами жизни и используется повсеместно: шифрование писем, документов, телекомунникаций, сообщений и т.д. Также с помощью криптографии пытаются достичь полной секретности в военных переговорах и в шпионаже.
           </p>
         </div>
-        <img src="../assets/img/Enigma.png" align="right" width="100%" class="scale">     
+        <img src="assets/img/Enigma.png" align="right" width="100%" class="scale">     
       </section>
     </section>
   </article>

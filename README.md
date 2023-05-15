@@ -10,7 +10,7 @@
 3. Прописать команду "ng serve" (без кавычек).
 
 Документации:
-[Angular](https://angular.io/docs)
+[Angular](https://angular.io/docs), 
 [NPM](https://docs.npmjs.com/)
 
 Проект также был выложен на [github pages](https://valentinsvidrigaylov.github.io/Cryptography/)

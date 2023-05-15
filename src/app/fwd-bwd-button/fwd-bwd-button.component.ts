@@ -30,6 +30,7 @@ export class FwdBwdButtonComponent implements OnInit {
   window: any;
 
   currentRoute: string;
+  currentRouteRaw: string;
   url_home: string;
   url_back: string;
   url_forth: string;
@@ -68,6 +69,7 @@ export class FwdBwdButtonComponent implements OnInit {
     this.urls = ['/home','/history','/main_problems','/popular_cyphers','/sources','/about'];
     console.log(this.urls);
     this.currentRoute = location.pathname.match(/[\w/]*\/(\w*)/i)![1] || '';
+	this.currentRouteRaw = location.pathname;
     this.url_home = this.urls[0];
     this.url_back = this.urls[this.urls.indexOf(location.pathname)-1 > 0 ? this.urls.indexOf(location.pathname)-1 : -1];
     this.url_forth = this.urls[this.urls.indexOf(location.pathname)+1 < this.urls.length ? this.urls.indexOf(location.pathname)+1 : 0];
@@ -80,7 +82,10 @@ export class FwdBwdButtonComponent implements OnInit {
 
         if (event instanceof NavigationEnd) {
             // Hide progress spinner or progress bar
-            this.currentRoute = event.url;          
+            this.currentRouteRaw = event.url;
+			this.currentRoute = this.currentRouteRaw.match(/[\w/]*(\/\w*)/i)![1] || '';
+			console.log(this.currentRouteRaw);
+			console.log(this.currentRoute);
             console.log(event);
             this.url_back = this.urls[this.urls.indexOf(this.currentRoute) > 0 ? this.urls.indexOf(this.currentRoute)-1 : this.urls.length-1];
             this.url_forth = this.urls[this.urls.indexOf(this.currentRoute)+1 < this.urls.length ? this.urls.indexOf(this.currentRoute)+1 : 0];

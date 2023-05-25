@@ -14,9 +14,9 @@ html[data-theme='light']
     --outer-background-color: #343A40
     --color: black
     --bs-body-color: black !important
-    --a-color: black
     --bs-nav-link-color: white
     --side-color: #F8F9FA 
+    --bs-link-color: black
 
 
 html[data-theme='dark']  
@@ -27,14 +27,14 @@ html[data-theme='dark']
     --color: white !important
     --bs-body-color: white !important
     --bs-nav-link-color: black
-    --a-color: white
+    --bs-link-color: white
     --side-color: #495057
 
     input
         background: #252a2e
 
 a 
-    color: var(--a-color)
+    color: var(--bs-link-color)
 
 a:hover 
     filter: invert(1)
@@ -54,6 +54,14 @@ body
   .split-#{$percent}-#{100-$percent}  
         display: grid
         grid-template-columns: #{$percent}fr #{100-$percent}fr
+
+@media (max-width: 600px)
+    .mobile-no-split
+        display: flex !important
+        flex-direction: column
+
+    .mobile-no-split .mobile-first
+        order: -2147483647
 
 main 
     padding: 0.5rem
@@ -90,21 +98,15 @@ a.active
 .scale 
   transition: 1s
 
-
 .scale:hover 
   transform: scale(1.1)
 
 .nav-link
     transition: none !important
-/* some stuff
 
 #submit
   border-radius: 10px
   background: #F9F9F9
-
-#wrapper img.zero
-  margin: 0
-  padding: 0
 
 .shown
   display: inline-block
@@ -150,10 +152,6 @@ div.margin-15
 .word-break
   word-break: break-all
 
-a
-  &.white-h:hover
-    color: #E6E6FA
-
 .block
   display: block
 
@@ -189,3 +187,8 @@ a
 .deco-none
   text-decoration: none
   list-style-type: none
+  
+#back
+  display: flex
+  justify-content: space-around
+  flex-wrap: wrap

@@ -167,7 +167,7 @@ import { Component, OnInit } from '@angular/core';
         <a id="skytale"></a>
         <h3>Скитала</h3>
         <p><img src="assets/img/Skytale.png" width="30%" alt="Скитала" title="Скитала"  class="scale"></p>              
-          <pre style="margin-left: 100px;">  | | | | | | | | | | | | | | | | | | |
+          <pre class="mx-auto w-75">  | | | | | | | | | | | | | | | | | | |
   | |В| |и|г|р|е| |е|е| |к|о|н|н|ы|й| |
   | |н|е| |с|л|о|в|и|т|,| | | | | | | |
   | |В| |б|е|д|е| |—| |н|е| | | | | | |

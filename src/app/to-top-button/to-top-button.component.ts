@@ -33,7 +33,7 @@ if (mybutton) {
   standalone: true,
   imports: [CommonModule],
   template: `<button type="button" class="btn" id="btn-back-to-top" (click)="GoTop()" *ngIf="this.window.pageYOffset > 100vh">
-              <i class="fas fa-arrow-up"></i>
+              <span class="fa-arrow-up"></span>
             </button>`,
   styleUrls: ['./to-top-button.component.sass']
 })

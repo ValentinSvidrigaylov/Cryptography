@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   <article>
     <section>         
     <h2 align="center">История</h2><br>
-      <section class="split-80-20 m-2">
+      <section class="split-80-20 m-2 mobile-no-split">
         <div>
           Шифрование или криптография берёт своё начало с 3-го тысячилетия до нашей эры. Тогда схема шифрования была проста - замена буквы алфавита другой буквой или же символом.<br>
             <p>&nbsp;</p>
@@ -15,10 +15,10 @@ import { Component, OnInit } from '@angular/core';
           <p> Но время идёт вперед, технологии развиваются и криптография не исключение. В 15 веке в Европе и уже в 19 веке на Ближнем Востоке начали использовать более сложный полиалфавитный шифр.
             А суть этого шифра заключается в цикличном приминении нескольких простых (моноалфавитных) шрифтов.
         </div>
-        <img src="assets/img/stick.jpg" width="100%" class="border-black border-20 scale" align="right">
+        <img src="assets/img/stick.jpg" width="100%" class="border-black border-20 scale mobile-first" align="right">
       </section>
-      <section class="split-40-60 m-2">
-        <div>
+      <section class="split-40-60 m-2 mobile-no-split">
+        <div class="mobile-first">
           <a href="assets/img/Vigenere.jpg"><img src="assets/img/Vigenere.jpg"  title="Шифр Виженера" align="left" class="scale" width="100%"></a>
         </div>
         <div class="m-2">
@@ -40,7 +40,7 @@ import { Component, OnInit } from '@angular/core';
           </ol>
         </div>
       </section>
-      <section class="split-90-10 m-2">
+      <section class="split-90-10 m-2 mobile-no-split">
         <div>
           <p>
           В последствие  в деле шифрования начали использовать электромеханические приборы для упрощения процесса, и происходило это от начала и до середины 20 века.</p>
@@ -52,7 +52,7 @@ import { Component, OnInit } from '@angular/core';
               В настоящее время криптография никуда не исчезла, просто она приобрела менее прикладной вид. Криптография давно стала неотъемлемой частью нашей с вами жизни и используется повсеместно: шифрование писем, документов, телекомунникаций, сообщений и т.д. Также с помощью криптографии пытаются достичь полной секретности в военных переговорах и в шпионаже.
           </p>
         </div>
-        <img src="assets/img/Enigma.png" align="right" width="100%" class="scale">     
+        <img src="assets/img/Enigma.png" align="right" width="100%" class="scale mobile-first">     
       </section>
     </section>
   </article>

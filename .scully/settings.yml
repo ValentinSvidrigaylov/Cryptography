@@ -1,0 +1,11 @@
+identifier: l4h7q6i4ffe3ddib
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: Cryptography
+homeFolder: D:\project1\Cryptography
+distFolder: dist/cryptography
+outDir: D:\project1\Cryptography\dist\static
+handle404: ''
+allowErrorCollect: false

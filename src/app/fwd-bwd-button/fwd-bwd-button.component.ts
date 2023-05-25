@@ -76,13 +76,15 @@ export class FwdBwdButtonComponent implements OnInit {
     this.CheckIndexes();
     this.router.events.subscribe((event: Event) => {
         if (event instanceof NavigationStart) {
-            // Show progress spinner or progress bar
             console.log('Route change detected');
         }
 
-        if (event instanceof NavigationEnd) {
-            // Hide progress spinner or progress bar
-            this.currentRouteRaw = event.url;
+        if (event instanceof NavigationEnd) {		
+			if (event.url == '/') {
+				this.currentRouteRaw = '/home';
+			} else {
+				this.currentRouteRaw = event.url;
+			}
 			this.currentRoute = this.currentRouteRaw.match(/[\w/]*(\/\w*)/i)![1] || '';
 			console.log(this.currentRouteRaw);
 			console.log(this.currentRoute);
